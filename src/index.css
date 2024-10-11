@@ -965,7 +965,7 @@ p {
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 .preview .project {
   padding: 3rem;
@@ -982,12 +982,13 @@ p {
     #c2ccff22 2px,
     transparent 4px
   );
-  width: 90%;
+  width: 80%;
   height: 90%;
   transition-duration: 0.1s;
   position: relative;
   overflow: hidden;
   margin: auto;
+  box-sizing: border-box;
 }
 .preview .project:hover {
   transform: scale(1.1);
@@ -1027,8 +1028,7 @@ p {
   text-shadow: 0 2px 16px rgba(174, 207, 242, 0.6);
 }
 .content-section.sec-content {
-  padding: 0;
-  padding-bottom: 12em;
+  padding: 0 1rem 12em 1rem;
 }
 .content-section.sec-content p.subt {
   margin: 5rem auto;
