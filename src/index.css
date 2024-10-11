@@ -850,7 +850,7 @@ p {
   color: #fff;
   width: 100%;
   text-align: center;
-  padding: 16em 0 12em 0;
+  padding: 16em 1rem 12em 1rem;
   overflow: hidden;
 }
 
@@ -965,6 +965,7 @@ p {
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   justify-content: center;
   gap: 1rem;
+  padding: 1rem;
 }
 .preview .project {
   padding: 3rem;
@@ -986,6 +987,7 @@ p {
   transition-duration: 0.1s;
   position: relative;
   overflow: hidden;
+  margin: auto;
 }
 .preview .project:hover {
   transform: scale(1.1);
@@ -1171,12 +1173,15 @@ p {
 }
 .contact {
   display: flex;
-  padding: 0;
+  padding: 1rem;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 .contact > li {
   flex: 1;
   display: flex;
   justify-content: center;
+  flex-basis: 10rem;
 }
 .contact > li > a {
   margin: auto;
