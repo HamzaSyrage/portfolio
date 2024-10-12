@@ -1196,6 +1196,7 @@ p {
 }
 .contact > li > a > p {
   color: #d8ecf8be;
+  text-wrap: nowrap;
 }
 .contact > li svg {
   width: 64px;
