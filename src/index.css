@@ -367,6 +367,7 @@ p {
   left: 0;
   right: 0;
   margin: auto;
+  text-align: center;
   height: 20em;
   padding-top: 2em;
   translate: 0 -1em;
