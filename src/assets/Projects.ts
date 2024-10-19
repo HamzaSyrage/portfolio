@@ -16,14 +16,14 @@ export const Projects: ProjectType[] = [
     id: "p1",
     title: "Next Foodies App",
     description:
-      "special thing about this project is that it's actually a fullstack application, so front-end and backend combined into one project. a brand new React project. which allows users to view meals, share meals, and be part of a foodies community.",
+      "special thing about this project is that it's actually a fullstack application, so front-end and backend combined into one project. a brand new React project. which allows users to view meals, share meals, and be part of a foodies community. \n note: use vpn to preview project",
     image: "images/rename-1.png",
     links: {
       repo: "https://github.com/HamzaSyrage/Next-JS-Foodies",
-      deploy: "",
+      deploy: "https://next-js-foodies-smoky.vercel.app/",
     },
     madeWith: ["NEXT", "REACT", "sql-lite3", "node"],
-    deployed: false,
+    deployed: true,
   },
   {
     id: "p2",
@@ -35,7 +35,7 @@ export const Projects: ProjectType[] = [
       repo: "https://github.com/HamzaSyrage/React-Router-Auth-JWT",
       deploy: "",
     },
-    madeWith: ["React", "node", "react-router"],
+    madeWith: ["React", "node", "react-router", "React Query", "API"],
     deployed: false,
   },
   {
@@ -46,10 +46,10 @@ export const Projects: ProjectType[] = [
     image: "images/rename-5.png",
     links: {
       repo: "https://github.com/HamzaSyrage/react-food-app",
-      deploy: "",
+      deploy: "https://hamzasyrage.github.io/react-food-app-frontend/",
     },
-    madeWith: ["React"],
-    deployed: false,
+    madeWith: ["React", "API"],
+    deployed: true,
   },
   {
     id: "p4",
@@ -59,10 +59,10 @@ export const Projects: ProjectType[] = [
     image: "images/rename-4.png",
     links: {
       repo: "https://github.com/HamzaSyrage/react-project-management-app",
-      deploy: "",
+      deploy: "https://hamzasyrage.github.io/react-project-management-app/",
     },
     madeWith: ["React", "tailwind"],
-    deployed: false,
+    deployed: true,
   },
   {
     id: "p5",
@@ -72,10 +72,10 @@ export const Projects: ProjectType[] = [
     image: "images/rename-3.png",
     links: {
       repo: "https://github.com/HamzaSyrage/React-Time-Challenge",
-      deploy: "",
+      deploy: "https://hamzasyrage.github.io/React-Time-Challenge",
     },
     madeWith: ["React"],
-    deployed: false,
+    deployed: true,
   },
   {
     id: "p6",
@@ -85,10 +85,10 @@ export const Projects: ProjectType[] = [
     image: "images/rename-6.png",
     links: {
       repo: "https://github.com/HamzaSyrage/React-Investment-Calculator-App",
-      deploy: "",
+      deploy: "https://hamzasyrage.github.io/React-Investment-Calculator-App",
     },
     madeWith: ["React"],
-    deployed: false,
+    deployed: true,
   },
   {
     id: "p7",
@@ -98,10 +98,10 @@ export const Projects: ProjectType[] = [
     image: "images/rename-7.png",
     links: {
       repo: "https://github.com/HamzaSyrage/react-tic-tac-toe-game",
-      deploy: "",
+      deploy: "https://hamzasyrage.github.io/react-tic-tac-toe-game",
     },
     madeWith: ["React"],
-    deployed: false,
+    deployed: true,
   },
   {
     id: "p8",
@@ -111,10 +111,10 @@ export const Projects: ProjectType[] = [
     image: "images/rename-8.png",
     links: {
       repo: "https://github.com/HamzaSyrage/react-quiz-app",
-      deploy: "",
+      deploy: "https://hamzasyrage.github.io/react-quiz-app",
     },
     madeWith: ["React"],
-    deployed: false,
+    deployed: true,
   },
   {
     id: "p8",
@@ -124,9 +124,9 @@ export const Projects: ProjectType[] = [
     image: "images/rename-9.png",
     links: {
       repo: "https://github.com/HamzaSyrage/Vanilla-JS-To-Do-App",
-      deploy: "",
+      deploy: "https://hamzasyrage.github.io/Vanilla-JS-To-Do-App",
     },
-    madeWith: ["React"],
-    deployed: false,
+    madeWith: ["vanilla js"],
+    deployed: true,
   },
 ];
