@@ -1,16 +1,39 @@
 import { useEffect, useRef } from "react";
 
+interface ParticleProps {
+  x: number;
+  y: number;
+  fadeDelay: number;
+  fadeStart: number;
+  fadingOut: boolean;
+  speed: number;
+  opacity: number;
+  reset(): void;
+  update(): void;
+  draw(): void;
+}
+
 export default function CanvasBG() {
-  const canvas = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const ctx = canvas!.current!.getContext("2d");
-    canvas!.current!.width = window.innerWidth;
-    canvas!.current!.height = window.innerHeight;
-    let particles: Particle[] = [];
-    let particleCount = calculateParticleCount();
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-    class Particle {
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    // Set canvas dimensions
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resizeCanvas();
+
+    let particles: Particle[] = [];
+    let animationId: number;
+
+    class Particle implements ParticleProps {
       x: number;
       y: number;
       fadeDelay: number;
@@ -18,21 +41,22 @@ export default function CanvasBG() {
       fadingOut: boolean;
       speed: number;
       opacity: number;
+
       constructor() {
         this.x = 0;
         this.speed = 0;
         this.opacity = 0;
-
-        this.reset();
-        this.y = Math.random() * canvas!.current!.height;
-        this.fadeDelay = Math.random() * 600 + 100;
-        this.fadeStart = Date.now() + this.fadeDelay;
+        this.y = 0;
+        this.fadeDelay = 0;
+        this.fadeStart = 0;
         this.fadingOut = false;
+        this.reset();
       }
 
       reset() {
-        this.x = Math.random() * canvas!.current!.width;
-        this.y = Math.random() * canvas!.current!.height;
+        if (!canvas) return;
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
         this.speed = Math.random() / 5 + 0.1;
         this.opacity = 1;
         this.fadeDelay = Math.random() * 600 + 100;
@@ -59,47 +83,55 @@ export default function CanvasBG() {
       }
 
       draw() {
-        ctx!.fillStyle = `rgba(${255 - (Math.random() * 255) / 2}, 255, 255, ${
-          this.opacity
-        })`;
-        ctx!.fillRect(this.x, this.y, 0.4, Math.random() * 2 + 1);
+        // Create a consistent color for each particle
+        const colorVariation = 255 - Math.random() * 50;
+        if (!ctx) return;
+        ctx.fillStyle = `rgba(${colorVariation}, 255, 255, ${this.opacity})`;
+        ctx.fillRect(this.x, this.y, 0.4, Math.random() * 2 + 1);
       }
+    }
+
+    function calculateParticleCount() {
+      if (!canvas) return;
+      return Math.floor((canvas.width * canvas.height) / 6000);
     }
 
     function initParticles() {
+      const particleCount = calculateParticleCount();
       particles = [];
-      for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-      }
+      if (particleCount)
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
     }
 
     function animate() {
-      ctx!.clearRect(0, 0, canvas!.current!.width, canvas!.current!.height);
+      if (!canvas || !ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((particle) => {
         particle.update();
         particle.draw();
       });
-      requestAnimationFrame(animate);
-    }
-
-    function calculateParticleCount() {
-      return Math.floor(
-        (canvas!.current!.width * canvas!.current!.height) / 6000
-      );
+      animationId = requestAnimationFrame(animate);
     }
 
     function onResize() {
-      canvas!.current!.width = window.innerWidth;
-      canvas!.current!.height = window.innerHeight;
-      particleCount = calculateParticleCount();
+      resizeCanvas();
       initParticles();
     }
 
     window.addEventListener("resize", onResize);
 
+    // Initialize and start animation
     initParticles();
-    animate();
-  }, [canvas.current]);
+    animationId = requestAnimationFrame(animate);
 
-  return <canvas ref={canvas} id="particleCanvas"></canvas>;
+    // Cleanup function
+    return () => {
+      window.removeEventListener("resize", onResize);
+      cancelAnimationFrame(animationId);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} id="particleCanvas"></canvas>;
 }
