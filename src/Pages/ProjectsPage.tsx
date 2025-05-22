@@ -1,6 +1,6 @@
 import { Projects } from "../assets/Projects";
-import CanvasBG from "../components/CanvasBG";
-import GoTo from "../components/Goto";
+import CanvasBG from "../components/shared/CanvasBG";
+import GoTo from "../components/shared/Goto";
 import ProjectDetail from "../components/ProjectDetail";
 import { motion } from "framer-motion";
 

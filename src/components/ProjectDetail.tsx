@@ -1,5 +1,5 @@
 import { TProject } from "../assets/Projects";
-import CanvasBG from "./CanvasBG";
+import CanvasBG from "./shared/CanvasBG";
 import { motion } from "framer-motion";
 
 export default function ProjectDetail({ project }: { project: TProject }) {

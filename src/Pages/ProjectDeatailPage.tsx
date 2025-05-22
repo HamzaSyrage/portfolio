@@ -1,6 +1,6 @@
 // import { useParams } from "react-router-dom";
 // import { Projects } from "../assets/Projects";
-import GoTo from "../components/Goto";
+import GoTo from "../components/shared/Goto";
 // import ProjectDeatail from "../components/ProjectDeatail";
 export default function ProjectDeatailPage() {
   // const param = useParams();

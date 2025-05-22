@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Projects } from "../../assets/Projects";
-import GoTo from "../Goto";
+import GoTo from "../shared/Goto";
 
 export default function ProjectPreview() {
   const ProjectsPreview = Projects.slice(0, 3);
