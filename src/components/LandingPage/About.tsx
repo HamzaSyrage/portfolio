@@ -12,14 +12,18 @@ export default function Content() {
 		>
 			{/* Animated Decorative Shapes */}
 			<motion.div
-				className="absolute left-0 right-0 top-1/4 mx-auto flex justify-center pointer-events-none z-0"
+				className="absolute left-0 right-0 top-1/4 mx-auto flex justify-center"
 				initial={{ y: 20 }}
 				whileInView={{ y: 0 }}
 				viewport={{ once: true }}
 				transition={{ duration: 0.8, delay: 0.2 }}
 			>
 				<motion.div
-					className="w-40 h-40 rounded-full bg-[radial-gradient(circle,transparent_0,#c2ccff22_2px,transparent_4px)] brightness-75 shadow-[inset_0_0_0_2px_#c2ccff,inset_0.2em_0.3em_0.2em_-0.2em_#c2ccff,inset_-1.2em_2.3em_2em_-0.5em_#d4e6ff2f,-1em_-0.2em_0.4em_-1.1em_#c2ccff] translate-x-[-18em] z-10 bg-[#121521]"
+					className="w-[10em] h-[10em] rounded-full shadow-[-1em_-0.2em_0.4em_-1.1em_#c2ccff,_inset_0em_0em_0em_2px_#c2ccff,_inset_0.2em_0.3em_0.2em_-0.2em_#c2ccff,_inset_-1.2em_2.3em_2em_-0.5em_#d4e6ff2f] bg-[#121521] z-[1] brightness-80 -translate-x-[18em]"
+					style={{
+						background:
+							"repeating-radial-gradient(at 50% 50%, transparent 0%, #c2ccff22 2px, transparent 4px)",
+					}}
 					initial={{ scale: 0.8 }}
 					whileInView={{ scale: 1 }}
 					viewport={{ once: true }}
@@ -27,7 +31,11 @@ export default function Content() {
 				/>
 
 				<motion.div
-					className="w-40 h-40 rounded-2xl bg-[radial-gradient(circle,transparent_0,#c2ccff22_2px,transparent_4px)] brightness-75 shadow-[inset_0_0_0_2px_#c2ccff,inset_0.2em_0.3em_0.2em_-0.2em_#c2ccff,inset_10.8em_11.3em_2em_-10.5em_#d4e6ff2f,-1em_-0.2em_0.4em_-1.1em_#c2ccff] translate-x-[18em] translate-y-[12em] z-10 bg-[#121521]"
+					className="w-[10em] h-[10em] rounded-2xl shadow-[-1em_-0.2em_0.4em_-1.1em_#c2ccff,_inset_0em_0em_0em_2px_#c2ccff,_inset_0.2em_0.3em_0.2em_-0.2em_#c2ccff,_inset_10.8em_11.3em_2em_-10.5em_#d4e6ff2f] bg-[#121521] z-[1] brightness-80 translate-x-[18em] translate-y-[12em]"
+					style={{
+						background:
+							"repeating-radial-gradient(at 50% 50%, transparent 0%, #c2ccff22 2px, transparent 4px)",
+					}}
 					initial={{ scale: 0.8 }}
 					whileInView={{ scale: 1 }}
 					viewport={{ once: true }}
