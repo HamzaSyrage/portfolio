@@ -1,19 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-interface HeaderProps {
-	onProjectsClick?: () => void;
-}
-
-export default function Header({ onProjectsClick }: HeaderProps) {
+export default function Header() {
 	const [isHovering, setIsHovering] = useState(false);
-
+	const navigate = useNavigate();
 	function handleClick() {
-		if (onProjectsClick) {
-			onProjectsClick();
-		}
 		// You can add your navigation logic here
-		// navigate("/portfolio/projects");
+		navigate("/portfolio/projects");
 	}
 
 	return (
