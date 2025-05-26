@@ -1,0 +1,15 @@
+export const SkillsList: string[] = [
+	"React",
+	"Next.js",
+	"React Router",
+	"TanStack Query",
+	"Redux & Redux Toolkit",
+	"Framer Motion",
+	"RESTful APIs",
+	"JavaScript (ES6+)",
+	"TypeScript",
+	"HTML5",
+	"CSS3",
+	"Tailwind CSS & Bootstrap",
+	"Git & GitHub",
+];

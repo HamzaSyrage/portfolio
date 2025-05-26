@@ -18,7 +18,7 @@ export const Projects: TProject[] = [
 		id: "p1",
 		title: "Next Foodies App",
 		description:
-			"A full-stack application built with Next.js that combines both frontend and backend functionality in a single codebase. This modern food community platform allows users to discover curated meals, share their own recipes, and engage with other food enthusiasts. The app features server-side rendering for optimal performance and SEO benefits, along with a SQLite database for persistent storage. Note: VPN may be required to access the deployed version.",
+			"A full-stack application built with Next.js that combines both frontend and backend functionality in a single codebase. This modern food community platform allows users to discover curated meals, share their own recipes, and engage with other food enthusiasts. The app features server-side rendering for optimal performance and SEO benefits, along with a SQLite database for persistent storage.",
 		image: "/images/rename-1.png",
 		links: {
 			repo: "https://github.com/HamzaSyrage/Next-JS-Foodies",
