@@ -12,8 +12,9 @@ export default function ProjectDeatailPage() {
   //   return <div>not found</div>;
   // }
   return (
-    <>
-      <GoTo to="/portfolio/">Back Home</GoTo>
-    </>
-  );
+		<>
+			<h1>still working on</h1>
+			<GoTo to="/portfolio/">Back Home</GoTo>
+		</>
+	);
 }

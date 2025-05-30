@@ -6,8 +6,7 @@ export default function Header() {
 	const [isHovering, setIsHovering] = useState(false);
 	const navigate = useNavigate();
 	function handleClick() {
-		// You can add your navigation logic here
-		navigate("/portfolio/projects");
+		navigate("projects");
 	}
 
 	return (
